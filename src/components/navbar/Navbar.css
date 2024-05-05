@@ -30,11 +30,10 @@
     font-size: 20px;
 }
 .nav_i{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     position: absolute;
-    left: -20px;
-
+    top: 0px;
 }
 .nav_like{
     cursor: pointer;
@@ -43,6 +42,8 @@
     right: 390px;
     width: 20px;
     height: 20px;
+    color: black;
+    text-decoration: none;
 }
 .nav p{
     position: absolute;
@@ -79,5 +80,6 @@
 }
 .nav_home{
     cursor: pointer;
-    color: rgb(73, 73, 255);
+    color: rgb(94, 209, 255);
+    text-decoration: none;
 }

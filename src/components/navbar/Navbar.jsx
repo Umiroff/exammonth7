@@ -1,7 +1,7 @@
 import React from 'react'
 import '../navbar/Navbar.css'
 import { FaSearch } from "react-icons/fa";
-import { GoPersonFill } from "react-icons/go";
+import { MdPersonOutline } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import  logo  from "../../assets/Icon.svg";
 import { Link } from 'react-router-dom';
@@ -20,19 +20,21 @@ function Navbar() {
             <option value="USD">Usd</option>
             <option value="UZS">Uzs</option>
         </select>        
-        <button className='nav_my'><GoPersonFill className='nav_i'/> My profile</button>
-        <Link to={'/favorites'}>
+        <button className='nav_my'><MdPersonOutline className='nav_i'/></button>
+        <Link to={'/wishlist'}>
         <FaHeart className='nav_like'/>
         </Link>
         <p>items $0.00</p>
         <FaSearch className='nav_search'/>
 
+        <Link to={'/'}>
         <img src={logo} alt="" className='nav_logoimg'/>
         <h2 className='nav_logo'>E-Comm</h2>
+        </Link>
 
         <ul className='nav_bar'>
-          <Link to={'/'}>
-          <li className='nav_home'>HOME</li>
+          <Link to={'/'} className='nav_home'>
+          <li >HOME</li>
           </Link>
           <li>BAGS</li>
           <li>SNEAKERS</li>

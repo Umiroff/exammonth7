@@ -1,17 +1,18 @@
 import React from 'react'
-import Categories from '../../components/categories/Categories'
-import Banner from '../../components/banner/Banner'
 import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
 import Hero from '../../components/hero/Hero'
+import Products from '../../components/products/Products'
+import Banner from '../../components/banner/Banner'
 import '../home/Home.css'
 
 const Home = () => {
+  const title= 'Best Sellers'
   return (
     <div className='home'>
       <Navbar />
       <Hero/>
-      <Categories/> 
+      <Products title={title}/>
       <Banner/>
       <Footer/>
     </div>

@@ -1,0 +1,35 @@
+.banner{
+    width: 1500px;
+    height: 600px;
+    margin: 0 auto;
+    background: rgba(64, 191, 255, 1);
+    position: relative;
+}
+.banner h2{
+    position: absolute;
+    left: 100px;
+    top: 150px;
+    color: white;
+    font-size: 55px;
+}
+.banner p{
+    position: absolute;
+    left: 100px;
+    top: 320px;
+    color: white;
+    font-size: 24px;
+}
+.banner a{
+    color: white;
+    position: absolute;
+    left: 100px;
+    top: 400px;
+    font-size: 25px;
+}
+.banner img{
+    position: absolute;
+    top: -100px;
+    right: 0px;
+    width: 800px;
+    height: 600px;
+}
