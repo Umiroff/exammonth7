@@ -3,11 +3,22 @@ import '../products/Products.css'
 import { Link } from 'react-router-dom'
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
+import { useGetProductQuery } from '../../context/productApi';
 
 
 
 
 function Products({title}) {
+  let {data} = useGetProductQuery()
+  console.log(data);
+
+  let products = data?.map((el) => (
+    <div key={el.id} className='card'>
+      <img src={el.image} alt="" />
+      <h2>{el.title}</h2>
+      <p>{el.price}</p>
+    </div>
+  ))
 
 
   return (
@@ -25,7 +36,7 @@ function Products({title}) {
         </ul>
     </div>
     <div className='cards'>
-        
+        {products}
     </div>
     </>
   )
