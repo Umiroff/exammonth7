@@ -4,15 +4,23 @@ import { FaHeart } from "react-icons/fa";
 import '../favorites/Favorites.css'
 import colors from '../../assets/colors.svg'
 import Navbar from '../navbar/Navbar';
+import Products from '../products/Products';
+import Empty from '../empty/Empty';
 
 function Favorites() {
-
-    
+  const wishes = useSelector(state => state.wishlist.value)
+    console.log(wishes);
 
 
   return (
     <>
-        <h2>dsnfjdbvdijn</h2>
+        {
+        wishes.length ? 
+        <Products title="Wishlist" data={wishes}/>
+        :
+        <Empty/>
+        // <EmptyWishes/>
+      }
     </>
   )
 }

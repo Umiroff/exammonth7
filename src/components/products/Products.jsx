@@ -1,24 +1,50 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import '../products/Products.css'
 import { Link } from 'react-router-dom'
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetProductQuery } from '../../context/productApi';
+import { Rating } from '@mui/material';
+import { toggleToWishes } from '../../context/wishlistSlice';
+import { FiShoppingCart } from "react-icons/fi";
+import { FaRegEye } from "react-icons/fa6";
 
 
 
 
-function Products({title}) {
-  let {data} = useGetProductQuery()
-  console.log(data);
 
-  let products = data?.map((el) => (
+
+function Products({title, data, handleLoadMore, limit, loading}) {
+  let {isLoading} = useGetProductQuery({limit: limit, count: 4})
+  const i = useSelector(reducer => reducer.wishlist.value)
+  const dispatch = useDispatch()
+
+  let items = data?.map((el) => (
     <div key={el.id} className='card'>
-      <img src={el.image} alt="" />
+      <img src={el.thumbnail} alt="" />
       <h2>{el.title}</h2>
-      <p>{el.price}</p>
+      <Rating className='card_stars' name="read-only" value={el.rating} readOnly />
+      <h3>$ {el.price}</h3>
+      <p>{el.discountPercentage} % off</p>
+      <div className='card_btns'>
+      <button className='card_like' onClick={() => dispatch(toggleToWishes(el))}>
+            {
+                i.some(l => l.id === el.id) ? 
+                <FaHeart className='like_icon' />
+                : <FaRegHeart className='like_icon'/>
+            }
+        </button>
+        <button className='card_cartbtn'>
+          <FiShoppingCart className='cart_icon'/>
+        </button>
+        <button className='card_infobtn'>
+          <FaRegEye className='info_icon'/>
+        </button>
+      </div>
     </div>
   ))
+
+  
 
 
   return (
@@ -36,10 +62,12 @@ function Products({title}) {
         </ul>
     </div>
     <div className='cards'>
-        {products}
+      {isLoading ? <div className="cards_loader"></div> : <></>}
+        {items}
+    <p onClick={handleLoadMore} className='cards_loadmore'>{loading}</p>
     </div>
     </>
   )
 }
 
-export default Products
+export default memo(Products)
