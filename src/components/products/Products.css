@@ -33,15 +33,27 @@
     border-radius: 15px;
     margin-bottom: 50px
 }
-.card img{
+.card_img{
     width: 270px;
     height: 230px;
     border-radius: 15px;
     position: absolute;
-    z-index: 1;
+    left: 14px;
+    top: 15px;
 }
-.card img:hover{
-    display: none;
+.card_img img{
+    width: 270px;
+    height: 230px;
+    border-radius: 15px;
+}
+.card:hover .card_btns{
+    display: block;
+    position: absolute;
+    width: 270px;
+    height: 230px;
+    top: 15px;
+    left: 14px;
+    background: whitesmoke;
 }
 .card h2{
     font-size: 25px;
@@ -97,13 +109,8 @@
     margin-bottom: 50px;
   }
 .card_btns{
-    position: absolute;
-    width: 270px;
-    height: 230px;
-    top: 15px;
-    left: 14px;
-    background: whitesmoke;
-    z-index: 0;
+    display: none;
+    
 }
 .card_like{
     cursor: pointer;
@@ -114,15 +121,11 @@
     height: 50px;
     border: 0px;
 }
-.card_like:hover {
-    transform: scale(1.5);
-}
 .like_icon{
     width: 30px;
     height: 30px;
 }
 .card_cartbtn{
-    cursor: pointer;
     position: absolute;
     top: 100px;
     left: 110px;
@@ -130,24 +133,17 @@
     height: 50px;
     border: 0px;
 }
-.card_cartbtn:hover {
-    transform: scale(1.5);
-}
 .cart_icon{
     width: 30px;
     height: 30px;
 }
 .card_infobtn{
-    cursor: pointer;
     position: absolute;
     top: 100px;
     left: 190px;
     width: 50px;
     height: 50px;
     border: 0px;
-}
-.card_infobtn:hover {
-    transform: scale(1.5);
 }
 .info_icon{
     width: 30px;

@@ -1,0 +1,144 @@
+.singlepro{
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.sin_imgs{
+    width: 380px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.sin_imgs_img{
+    width: 85px;
+    height: 85px;
+    background-color: whitesmoke;
+}
+.sin_imgs_img:hover{
+    border: 3px solid rgba(64, 191, 255, 1);
+}
+.sin_imgs_main{
+    width: 380px;
+    height: 290px;
+    margin-bottom: 50px;
+}
+
+.sin_texts{
+    width: 450px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sin_texts h2{
+    width: 450px;
+    height: 70px;
+    font-size: 30px;
+}
+.sin_texts_rating{
+    width: 450px;
+    height: 50px;
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid rgb(162, 162, 162);
+}
+.sin_texts_rating p{
+    font-size: 20px;
+}
+.sin_texts_rating a{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgba(64, 191, 255, 1);
+}
+
+.sin_texts_price{
+    width: 450px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+.sin_texts_price h3{
+    font-size: 25px;
+    color: rgba(64, 191, 255, 1);
+}
+.sin_texts_price p{
+    margin-top: 5px;
+    font-size: 20px;
+    color: rgba(251, 113, 129, 1);
+}
+
+.sin_texts_acf{
+    width: 450px;
+    height: 100px;
+    border-bottom: 1px solid rgb(162, 162, 162);
+}
+.sin_texts_acf p{
+    font-size: 20px;
+}
+
+.sin_texts_clr{
+    width: 450px;
+    height: 50px;
+    display: flex;
+}
+.sin_texts_clr p{
+    font-size: 20px;
+    margin-top: 14px;
+}
+
+.sin_texts_size{
+    width: 450px;
+    height: 50px;
+    display: flex;
+    gap: 50px;
+    border-bottom: 1px solid rgb(162, 162, 162);
+}
+.sin_texts_size p{
+    font-size: 20px;
+    margin-top: 5px;
+}
+.sin_texts_size select{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.sin_texts_btns{
+    width: 450px;
+    height: 50px;
+    display: flex;
+    gap: 50px;
+}
+.sin_text_btns_like{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(64, 191, 255, 1);
+    background: fixed;
+}
+.like_icon{
+    width: 30px;
+    height: 30px;
+}
+
+.sin_des{
+    width: 900px;
+    height: 500px;
+    background: whitesmoke;
+    margin-bottom: 50px;
+}
+.sin_des h3{
+    width: 900px;
+    height: 50px;
+    font-size: 30px;
+    color: rgba(64, 191, 255, 1);
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgb(162, 162, 162);
+}
+.sin_des p{
+    font-size: 20px;
+}

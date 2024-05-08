@@ -17,6 +17,6 @@ const baseQueryWithRetry = retry(baseQuery, { maxRetries: 1 })
 export const api = createApi({
   reducerPath: 'mainApi',
   baseQuery: baseQueryWithRetry,
-  tagTypes: ["Product", "User"],
+  tagTypes: ["Product"],
   endpoints: () => ({}),
 })

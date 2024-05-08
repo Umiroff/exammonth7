@@ -19,8 +19,10 @@ function Navbar() {
         <select name="" id="" className='nav_sel2'>
             <option value="USD">Usd</option>
             <option value="UZS">Uzs</option>
-        </select>        
-        <button className='nav_my'><MdPersonOutline className='nav_i'/></button>
+        </select>
+        <Link className='nav_my' to={'/sign-up'}>
+        <MdPersonOutline className='nav_i'/>
+        </Link>        
         <Link to={'/wishlist'}>
         <FaHeart className='nav_like'/>
         </Link>

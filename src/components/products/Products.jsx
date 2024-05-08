@@ -10,10 +10,6 @@ import { FiShoppingCart } from "react-icons/fi";
 import { FaRegEye } from "react-icons/fa6";
 
 
-
-
-
-
 function Products({title, data, handleLoadMore, limit, loading}) {
   let {isLoading} = useGetProductQuery({limit: limit, count: 4})
   const i = useSelector(reducer => reducer.wishlist.value)
@@ -21,7 +17,9 @@ function Products({title, data, handleLoadMore, limit, loading}) {
 
   let items = data?.map((el) => (
     <div key={el.id} className='card'>
-      <img src={el.thumbnail} alt="" />
+      <div className='card_img'>
+        <img src={el.thumbnail} alt="" />
+      </div>
       <h2>{el.title}</h2>
       <Rating className='card_stars' name="read-only" value={el.rating} readOnly />
       <h3>$ {el.price}</h3>
@@ -38,7 +36,9 @@ function Products({title, data, handleLoadMore, limit, loading}) {
           <FiShoppingCart className='cart_icon'/>
         </button>
         <button className='card_infobtn'>
+        <Link to={`/product/${el.id}`}>
           <FaRegEye className='info_icon'/>
+        </Link>
         </button>
       </div>
     </div>
