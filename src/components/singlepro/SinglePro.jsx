@@ -10,13 +10,15 @@ import { toggleToWishes } from '../../context/wishlistSlice';
 function SinglePro() {
     const product = useParams()
     const id = product?.id
-    const {data} = useGetProductByIdQuery(id)
-    console.log(data);
+    const {data, isLoading} = useGetProductByIdQuery(id)
     const i = useSelector(reducer => reducer.wishlist.value)
     const dispatch = useDispatch()
 
   return (
     <>
+    {
+      isLoading ? <div className='cards_loader'></div> :
+    
     <div className='singlepro'>
 
       <div className='sin_imgs'>
@@ -81,6 +83,7 @@ function SinglePro() {
         <p>{data?.description}</p>
       </div>
     </div>
+}
     </>
   )
 }

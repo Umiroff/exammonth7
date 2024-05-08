@@ -1,7 +1,7 @@
 import React, { memo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import '../basket/Basket.css'
-import { decCart, incCart, removeFromCart } from '../../context/cartSlice'
+import { clearCart, decCart, incCart, removeFromCart } from '../../context/cartSlice'
 import { CiCircleRemove } from "react-icons/ci";
 import Empty from '../empty/Empty';
 import { Box, Button, Modal, Typography } from '@mui/material';
@@ -71,6 +71,8 @@ function Basket() {
           };
           
           api.send();
+          dispatch(clearCart())
+          handleClose()
     }
   
 
@@ -139,8 +141,8 @@ function Basket() {
         <Box sx={style}>
             <h2 style={{color: 'deepskyblue', fontSize: 40}}>Make Payment</h2>
         <form className='mod_form'>
-        <input value={username} placeholder='Name' onChange={((e)=> setUsername(e.target.value))} className='mod_inp' type="text" />
-        <PatternFormat className='mod_inp' format="+998 (##) ###-##-##" allowEmptyFormatting mask='_' valueIsNumericString={true} />
+        <input required value={username} placeholder='Name' onChange={((e)=> setUsername(e.target.value))} className='mod_inp' type="text" />
+        <PatternFormat required value={phone} onChange={((e)=> setPhone(e.target.value))} className='mod_inp' format="+998 (##) ###-##-##" allowEmptyFormatting mask='_' valueIsNumericString={true} />
         <Button onClick={handleOrder} variant="contained" style={{width: 400, height: 50, border: 0}}>Go to Payment</Button>
       </form>
         <p style={{fontSize: 20}}>Ustoz faqat bot siz korsatgan usul bilan ishlamadi shuning ucun boshqacaro qildm internetdan organib. Bu gurpada mahsulotlar keladi botdan: https://t.me/+q8_yBxd4JbxiNWUy</p>
