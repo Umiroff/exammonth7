@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../hero/Hero.css'
 import backImg from "../../assets/back-img.svg";
 
@@ -13,4 +13,4 @@ function Hero() {
   )
 }
 
-export default Hero
+export default memo(Hero)

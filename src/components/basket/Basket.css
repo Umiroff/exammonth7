@@ -1,0 +1,132 @@
+.cart{
+    width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cart_titles{
+    width: 1300px;
+    display: flex;
+    gap:    580px;
+    margin-bottom: 50px;
+}
+.cart_titles p{
+    font-size: 25px;
+}
+.cart_titles div{
+    width: 600px;
+    display: flex;
+    gap: 120px;
+}
+
+.cart_card{
+    width: 1300px;
+    height: 130px;
+    display: flex;
+    gap: 430px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgb(154, 154, 154);
+}
+.cart_card img{
+    width: 150px;
+    height: 100px;
+}
+.cart_card_part{
+    width: 800px;
+    display: flex;
+    gap: 70px;
+}
+.remove_icon{
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.cart_card_part p{
+    width: 80px;
+    padding-top: 30px;
+    font-size: 25px;
+}
+.cart_card_btns{
+    display: flex;
+    width: 150px;
+    height: 100px;
+    padding-top: 25px;
+}
+.cart_card_btns button{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border: 0px;
+}
+.cart_card_btns p{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    padding-left: 18px;
+    padding-top: 10px;
+    background-color: whitesmoke;
+}
+
+
+.cart_bottom{
+    width: 1300px;
+    display: flex;
+    gap: 400px;
+}
+.cart_coupon{
+    width: 500px;
+    height: 100px;
+}
+.coupon_inp{
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+.cart_total{
+    width: 400px;
+    height: 320px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cart_total div{
+    width: 200px;
+    line-height: 50px;
+    font-size: 25px;
+}
+.cart_total_sum{
+    width: 400px !important;
+    display: flex !important;
+    gap: 100px;
+}
+
+
+.mod_form{
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    margin-left: 300px;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mod_inp{
+    width: 400px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 30px;
+    padding-left: 20px;
+}
+.mod_btn{
+    cursor: pointer;
+    width: 210px;
+    height: 50px;
+    background: rgba(59, 183, 126, 1);
+    color: white;
+    border: 0px;
+    border-radius: 30px;
+    font-size: 30px;
+    margin-left: 100px;
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../footer/Footer.css'
 import  logo  from "../../assets/Icon.svg";
 
@@ -54,4 +54,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default memo(Footer)

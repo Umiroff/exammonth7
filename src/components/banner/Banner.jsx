@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../banner/Banner.css'
 import shoe from '../../assets/shoe.svg'
 
@@ -15,4 +15,4 @@ function Banner() {
   )
 }
 
-export default Banner
+export default memo(Banner)

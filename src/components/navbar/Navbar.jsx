@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { memo } from 'react'
 import '../navbar/Navbar.css'
 import { FaSearch } from "react-icons/fa";
 import { MdPersonOutline } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import  logo  from "../../assets/Icon.svg";
 import { Link } from 'react-router-dom';
+import { FiShoppingCart } from 'react-icons/fi';
 
 
 
@@ -25,6 +26,9 @@ function Navbar() {
         </Link>        
         <Link to={'/wishlist'}>
         <FaHeart className='nav_like'/>
+        </Link>
+        <Link to={'/cart'} className='nav_cart'>
+        <FiShoppingCart className='nav_cart_icon'/>
         </Link>
         <p>items $0.00</p>
         <FaSearch className='nav_search'/>
@@ -48,4 +52,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default memo(Navbar)

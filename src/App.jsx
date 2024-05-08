@@ -6,6 +6,7 @@ import Liked from './pages/liked/Liked'
 import Single from './pages/single/Single'
 import Auth from './pages/auth/Auth'
 import Admin from './pages/admin/Admin'
+import Cart from './pages/cart/Cart'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/sign-up' element={<SignUp/>}/>
         <Route path='*' element={<h2>404</h2>}/>
         <Route path='/wishlist' element={<Liked/>}/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/product/:id' element={<Single/>}/>
         <Route path='/' element={<Auth/>}>
           <Route path='/admin' element={<Admin/>}/>

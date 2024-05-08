@@ -8,6 +8,7 @@ import { Rating } from '@mui/material';
 import { toggleToWishes } from '../../context/wishlistSlice';
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegEye } from "react-icons/fa6";
+import { addToCart } from '../../context/cartSlice';
 
 
 function Products({title, data, handleLoadMore, limit, loading, loadName}) {
@@ -32,7 +33,7 @@ function Products({title, data, handleLoadMore, limit, loading, loadName}) {
                 : <FaRegHeart className='like_icon'/>
             }
         </button>
-        <button className='card_cartbtn'>
+        <button className='card_cartbtn' onClick={() => dispatch(addToCart(el))}>
           <FiShoppingCart className='cart_icon'/>
         </button>
         <button className='card_infobtn'>
