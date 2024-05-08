@@ -143,7 +143,7 @@ function Basket() {
         <PatternFormat className='mod_inp' format="+998 (##) ###-##-##" allowEmptyFormatting mask='_' valueIsNumericString={true} />
         <Button onClick={handleOrder} variant="contained" style={{width: 400, height: 50, border: 0}}>Go to Payment</Button>
       </form>
-        <p>Ustoz faqat bot siz korsatgan usul bilan ishlamadi shuning ucun boshqacaro qildm internetdan organib</p>
+        <p style={{fontSize: 20}}>Ustoz faqat bot siz korsatgan usul bilan ishlamadi shuning ucun boshqacaro qildm internetdan organib. Bu gurpada mahsulotlar keladi botdan: https://t.me/+q8_yBxd4JbxiNWUy</p>
         </Box>
       </Modal>
     </div>
