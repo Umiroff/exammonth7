@@ -12,6 +12,7 @@ const Home = () => {
   let {data} = useGetProductQuery({limit: limit, count: 4})
   const title= 'Best Sellers'
   const loading = 'LOAD MORE'
+  const loadName = 'cards_loader'
 
   const handleLoadMore = (e) => {
     e.preventDefault()
@@ -22,7 +23,7 @@ const Home = () => {
     <div className='home'>
       <Navbar />
       <Hero/>
-      <Products title={title} data={data?.products} handleLoadMore={handleLoadMore} limit={limit} loading={loading}/>
+      <Products title={title} data={data?.products} handleLoadMore={handleLoadMore} limit={limit} loading={loading} loadName={loadName}/>
       <Banner/>
       <Footer/>
     </div>

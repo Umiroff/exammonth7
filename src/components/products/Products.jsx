@@ -10,7 +10,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { FaRegEye } from "react-icons/fa6";
 
 
-function Products({title, data, handleLoadMore, limit, loading}) {
+function Products({title, data, handleLoadMore, limit, loading, loadName}) {
   let {isLoading} = useGetProductQuery({limit: limit, count: 4})
   const i = useSelector(reducer => reducer.wishlist.value)
   const dispatch = useDispatch()
@@ -62,7 +62,7 @@ function Products({title, data, handleLoadMore, limit, loading}) {
         </ul>
     </div>
     <div className='cards'>
-      {isLoading ? <div className="cards_loader"></div> : <></>}
+      {isLoading ? <div className={`${loadName}`}></div> : <></>}
         {items}
     <p onClick={handleLoadMore} className='cards_loadmore'>{loading}</p>
     </div>
