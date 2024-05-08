@@ -5,8 +5,15 @@ import { decCart, incCart, removeFromCart } from '../../context/cartSlice'
 import { CiCircleRemove } from "react-icons/ci";
 import Empty from '../empty/Empty';
 import { Box, Button, Modal, Typography } from '@mui/material';
+import { PatternFormat } from 'react-number-format';
 
 const BOT_TOKEN = '6622199888:AAHqsCKSs5d6awvfxhjAqvQmnBy1_kcCPjI'
+const CHAT_ID = '-4108697716'
+
+// updates: https://api.telegram.org/bot6622199888:AAHqsCKSs5d6awvfxhjAqvQmnBy1_kcCPjI/getUpdates
+
+//https://api.telegram.org/bot[your_token]/sendMessage?chat_id=[your chat_id]
+
 
 const style = {
     position: 'absolute',
@@ -28,9 +35,11 @@ function Basket() {
     let total = useSelector(state => state.cart.total)
     const dispatch = useDispatch()
     for (let i = 0; i < carts?.map(e => e.quantity*e.price). length; i++) { total += carts?.map(e => e.quantity*e.price)[i]; }
-
+    
+    let order = carts?.map(e => `${e.title} %0A quantity: ${e.quantity} %0A price: ${e.price} %0A`)
+    
     const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [phone, setPhone] = useState('')
 
 
     const [open, setOpen] = React.useState(false);
@@ -38,7 +47,33 @@ function Basket() {
   const handleClose = () => setOpen(false);
 
   
-    
+    const handleOrder = (e) => {
+        e.preventDefault();
+        let text = ''
+        text += `${username} `
+        text += `wants to buy some things %0A Give call: ${phone} %0A ${order}  %0A total: ${total}`
+        let url =  `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`
+
+        
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', url, true)
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              // Request was successful
+              const response = JSON.parse(xhr.responseText);
+              console.log(response);
+            } else {
+              // Request failed
+              console.error('Request failed with status:', xhr.status);
+            }
+          };
+          
+          xhr.onerror = function() {
+            console.error('Request failed');
+          };
+          
+          xhr.send();
+    }
   
 
 
@@ -107,9 +142,10 @@ function Basket() {
             <h2 style={{color: 'deepskyblue', fontSize: 40}}>Make Payment</h2>
         <form className='mod_form'>
         <input value={username} placeholder='Name' onChange={((e)=> setUsername(e.target.value))} className='mod_inp' type="text" />
-        <input value={password} placeholder='Phone' onChange={((e)=> setPassword(e.target.value))} className='mod_inp'  type="number" />
-        <Button variant="contained" style={{width: 400, height: 50, border: 0}}>Go to Payment</Button>
+        <PatternFormat className='mod_inp' format="+998 (##) ###-##-##" allowEmptyFormatting mask='_' valueIsNumericString={true} />
+        <Button onClick={handleOrder} variant="contained" style={{width: 400, height: 50, border: 0}}>Go to Payment</Button>
       </form>
+        <p>Ustoz faqat bot siz korsatgan usul bilan ishlamadi shuning ucun boshqacaro qildm internetdan organib</p>
         </Box>
       </Modal>
     </div>
@@ -117,4 +153,5 @@ function Basket() {
   )
 }
 
-export default memo(Basket)
+
+export default Basket
