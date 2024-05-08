@@ -55,24 +55,22 @@ function Basket() {
         let url =  `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`
 
         
-        let xhr = new XMLHttpRequest()
-        xhr.open('GET', url, true)
-        xhr.onload = function() {
-            if (xhr.status >= 200 && xhr.status < 300) {
-              // Request was successful
-              const response = JSON.parse(xhr.responseText);
+        let api = new XMLHttpRequest()
+        api.open('GET', url, true)
+        api.onload = function() {
+            if (api.status >= 200 && api.status < 300) {
+              const response = JSON.parse(api.responseText);
               console.log(response);
             } else {
-              // Request failed
-              console.error('Request failed with status:', xhr.status);
+              console.error('Request failed with status:', api.status);
             }
           };
           
-          xhr.onerror = function() {
+          api.onerror = function() {
             console.error('Request failed');
           };
           
-          xhr.send();
+          api.send();
     }
   
 
